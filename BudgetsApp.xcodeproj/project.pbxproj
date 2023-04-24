@@ -20,6 +20,7 @@
 		55A554D329F6BDD800930D87 /* BudgetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554D229F6BDD800930D87 /* BudgetListView.swift */; };
 		55A554D529F6E8C600930D87 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554D429F6E8C600930D87 /* Transaction+CoreDataClass.swift */; };
 		55A554D729F6E91B00930D87 /* BudgetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554D629F6E91B00930D87 /* BudgetDetailView.swift */; };
+		55A554D929F70FB400930D87 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554D829F70FB400930D87 /* TransactionListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		55A554D229F6BDD800930D87 /* BudgetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListView.swift; sourceTree = "<group>"; };
 		55A554D429F6E8C600930D87 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		55A554D629F6E91B00930D87 /* BudgetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailView.swift; sourceTree = "<group>"; };
+		55A554D829F70FB400930D87 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				55A554CB29F6ABF200930D87 /* AddBudgetCategoryView.swift */,
 				55A554D229F6BDD800930D87 /* BudgetListView.swift */,
 				55A554D629F6E91B00930D87 /* BudgetDetailView.swift */,
+				55A554D829F70FB400930D87 /* TransactionListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				55A554B429F6822500930D87 /* BudgetsAppApp.swift in Sources */,
 				55A554D129F6AF9500930D87 /* Views+Extensions.swift in Sources */,
 				55A554CF29F6AEEA00930D87 /* NumberFormatter+Extensions.swift in Sources */,
+				55A554D929F70FB400930D87 /* TransactionListView.swift in Sources */,
 				55A554C629F6892800930D87 /* BudgetCategory+CoreDataClass.swift in Sources */,
 				55A554CC29F6ABF200930D87 /* AddBudgetCategoryView.swift in Sources */,
 				55A554D529F6E8C600930D87 /* Transaction+CoreDataClass.swift in Sources */,
