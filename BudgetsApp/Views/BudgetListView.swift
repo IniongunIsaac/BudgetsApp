@@ -20,8 +20,15 @@ struct BudgetListView: View {
                         HStack {
                             Text(budgetCategory.title ?? "")
                             Spacer()
-                            VStack {
+                            VStack(alignment: .trailing, spacing: 10) {
                                 Text(budgetCategory.total as NSNumber, formatter: NumberFormatter.currency)
+                                VStack {
+                                    Text("\(budgetCategory.overSpent ? "Overspent": "Remaining") \(Text(budgetCategory.remainingBudgetTotal as NSNumber, formatter: NumberFormatter.currency))")
+                                        .frame(maxWidth: .infinity, alignment: .trailing)
+                                        .fontWeight(.medium)
+                                        .font(.caption)
+                                        .foregroundColor(budgetCategory.overSpent ? .red: .green)
+                                }
                             }
                         }
                     }
@@ -31,7 +38,9 @@ struct BudgetListView: View {
             } else {
                 Text("No budget categories exist!")
             }
-        }.navigationDestination(for: BudgetCategory.self) { budgetCategory in
+        }
+        .listStyle(.plain)
+        .navigationDestination(for: BudgetCategory.self) { budgetCategory in
             BudgetDetailView(budgetCategory: budgetCategory)
         }
     }

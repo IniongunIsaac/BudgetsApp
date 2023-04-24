@@ -49,6 +49,8 @@ struct BudgetDetailView: View {
                 .centerHorizontally()
             }
             
+            BudgetSummaryView(budgetCategory: budgetCategory)
+            
             TransactionListView(request: BudgetCategory.transactionsByCategoryRequest(budgetCategory))
         }
     }
