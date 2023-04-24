@@ -13,6 +13,7 @@
 		55A554BB29F6822500930D87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A554BA29F6822500930D87 /* Preview Assets.xcassets */; };
 		55A554C329F6828900930D87 /* BudgetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55A554C129F6828900930D87 /* BudgetModel.xcdatamodeld */; };
 		55A554C629F6892800930D87 /* BudgetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554C529F6892800930D87 /* BudgetCategory+CoreDataClass.swift */; };
+		55A554C929F68C7400930D87 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554C829F68C7400930D87 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		55A554BA29F6822500930D87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55A554C229F6828900930D87 /* BudgetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetModel.xcdatamodel; sourceTree = "<group>"; };
 		55A554C529F6892800930D87 /* BudgetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		55A554C829F68C7400930D87 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		55A554B229F6822500930D87 /* BudgetsApp */ = {
 			isa = PBXGroup;
 			children = (
+				55A554C729F68C6500930D87 /* Managers */,
 				55A554C429F6891300930D87 /* Models */,
 				55A554B329F6822500930D87 /* BudgetsAppApp.swift */,
 				55A554B529F6822500930D87 /* ContentView.swift */,
@@ -79,6 +82,14 @@
 				55A554C529F6892800930D87 /* BudgetCategory+CoreDataClass.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		55A554C729F68C6500930D87 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				55A554C829F68C7400930D87 /* CoreDataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +165,7 @@
 				55A554B629F6822500930D87 /* ContentView.swift in Sources */,
 				55A554B429F6822500930D87 /* BudgetsAppApp.swift in Sources */,
 				55A554C629F6892800930D87 /* BudgetCategory+CoreDataClass.swift in Sources */,
+				55A554C929F68C7400930D87 /* CoreDataManager.swift in Sources */,
 				55A554C329F6828900930D87 /* BudgetModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
