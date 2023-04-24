@@ -13,12 +13,21 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: []) private var budgetCategoryResults: FetchedResults<BudgetCategory>
     @State private var isPresented: Bool = false
     
+    var grandTotal: Double {
+        budgetCategoryResults.reduce(0) { partialResult, budgetCategory in
+            return partialResult + budgetCategory.total
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             VStack {
-                List(budgetCategoryResults) { budgetCategory in
-                    Text(budgetCategory.title ?? "")
-                }
+                Text(grandTotal as NSNumber, formatter: NumberFormatter.currency)
+                    .fontWeight(.bold)
+                    .font(.title)
+                
+                BudgetListView(budgetCategoryResults: budgetCategoryResults,
+                               onDeleteBudgetCategory: deleteBudgetCategory)
             }
             .sheet(isPresented: $isPresented) {
                 AddBudgetCategoryView()
@@ -30,6 +39,15 @@ struct ContentView: View {
                     }
                 }
             }
+        }
+    }
+    
+    private func deleteBudgetCategory(_ budgetCategory: BudgetCategory) {
+        viewContext.delete(budgetCategory)
+        do {
+            try viewContext.save()
+        } catch {
+            print(error)
         }
     }
 }

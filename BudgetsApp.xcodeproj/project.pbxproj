@@ -17,6 +17,7 @@
 		55A554CC29F6ABF200930D87 /* AddBudgetCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554CB29F6ABF200930D87 /* AddBudgetCategoryView.swift */; };
 		55A554CF29F6AEEA00930D87 /* NumberFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554CE29F6AEEA00930D87 /* NumberFormatter+Extensions.swift */; };
 		55A554D129F6AF9500930D87 /* Views+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554D029F6AF9500930D87 /* Views+Extensions.swift */; };
+		55A554D329F6BDD800930D87 /* BudgetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554D229F6BDD800930D87 /* BudgetListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		55A554CB29F6ABF200930D87 /* AddBudgetCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetCategoryView.swift; sourceTree = "<group>"; };
 		55A554CE29F6AEEA00930D87 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		55A554D029F6AF9500930D87 /* Views+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views+Extensions.swift"; sourceTree = "<group>"; };
+		55A554D229F6BDD800930D87 /* BudgetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				55A554CB29F6ABF200930D87 /* AddBudgetCategoryView.swift */,
+				55A554D229F6BDD800930D87 /* BudgetListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				55A554CC29F6ABF200930D87 /* AddBudgetCategoryView.swift in Sources */,
 				55A554C929F68C7400930D87 /* CoreDataManager.swift in Sources */,
 				55A554C329F6828900930D87 /* BudgetModel.xcdatamodeld in Sources */,
+				55A554D329F6BDD800930D87 /* BudgetListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
