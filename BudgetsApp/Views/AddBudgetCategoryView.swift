@@ -87,6 +87,6 @@ struct AddBudgetCategoryView: View {
 
 struct AddBudgetCategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        AddBudgetCategoryView()
+        AddBudgetCategoryView().environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
     }
 }
