@@ -14,6 +14,9 @@
 		55A554C329F6828900930D87 /* BudgetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55A554C129F6828900930D87 /* BudgetModel.xcdatamodeld */; };
 		55A554C629F6892800930D87 /* BudgetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554C529F6892800930D87 /* BudgetCategory+CoreDataClass.swift */; };
 		55A554C929F68C7400930D87 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554C829F68C7400930D87 /* CoreDataManager.swift */; };
+		55A554CC29F6ABF200930D87 /* AddBudgetCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554CB29F6ABF200930D87 /* AddBudgetCategoryView.swift */; };
+		55A554CF29F6AEEA00930D87 /* NumberFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554CE29F6AEEA00930D87 /* NumberFormatter+Extensions.swift */; };
+		55A554D129F6AF9500930D87 /* Views+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A554D029F6AF9500930D87 /* Views+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		55A554C229F6828900930D87 /* BudgetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetModel.xcdatamodel; sourceTree = "<group>"; };
 		55A554C529F6892800930D87 /* BudgetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		55A554C829F68C7400930D87 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		55A554CB29F6ABF200930D87 /* AddBudgetCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetCategoryView.swift; sourceTree = "<group>"; };
+		55A554CE29F6AEEA00930D87 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		55A554D029F6AF9500930D87 /* Views+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,8 @@
 		55A554B229F6822500930D87 /* BudgetsApp */ = {
 			isa = PBXGroup;
 			children = (
+				55A554CD29F6AED300930D87 /* Extensions */,
+				55A554CA29F6ABDE00930D87 /* Views */,
 				55A554C729F68C6500930D87 /* Managers */,
 				55A554C429F6891300930D87 /* Models */,
 				55A554B329F6822500930D87 /* BudgetsAppApp.swift */,
@@ -90,6 +98,23 @@
 				55A554C829F68C7400930D87 /* CoreDataManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		55A554CA29F6ABDE00930D87 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55A554CB29F6ABF200930D87 /* AddBudgetCategoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		55A554CD29F6AED300930D87 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				55A554CE29F6AEEA00930D87 /* NumberFormatter+Extensions.swift */,
+				55A554D029F6AF9500930D87 /* Views+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,7 +189,10 @@
 			files = (
 				55A554B629F6822500930D87 /* ContentView.swift in Sources */,
 				55A554B429F6822500930D87 /* BudgetsAppApp.swift in Sources */,
+				55A554D129F6AF9500930D87 /* Views+Extensions.swift in Sources */,
+				55A554CF29F6AEEA00930D87 /* NumberFormatter+Extensions.swift in Sources */,
 				55A554C629F6892800930D87 /* BudgetCategory+CoreDataClass.swift in Sources */,
+				55A554CC29F6ABF200930D87 /* AddBudgetCategoryView.swift in Sources */,
 				55A554C929F68C7400930D87 /* CoreDataManager.swift in Sources */,
 				55A554C329F6828900930D87 /* BudgetModel.xcdatamodeld in Sources */,
 			);
