@@ -10,6 +10,19 @@ import CoreData
 
 @objc(BudgetCategory)
 public class BudgetCategory: NSManagedObject {
+    
+    var transactionsTotal: Double {
+        transactionsArray.map { $0.total }.reduce(0, +)
+    }
+    
+    var remainingBudgetTotal: Double {
+        total - transactionsTotal
+    }
+    
+    var overSpent: Bool {
+        remainingBudgetTotal < 0
+    }
+    
     public override func awakeFromInsert() {
         self.dateCreated = Date()
     }
@@ -29,15 +42,17 @@ public class BudgetCategory: NSManagedObject {
         }
     }
     
-    var transactionsTotal: Double {
-        transactionsArray.map { $0.total }.reduce(0, +)
+    static func byId(_ id: NSManagedObjectID) -> BudgetCategory {
+        let viewContext = CoreDataManager.shared.viewContext
+        guard let budgetCategory = viewContext.object(with: id) as? BudgetCategory else {
+            fatalError("Id not found")
+        }
+        return budgetCategory
     }
     
-    var remainingBudgetTotal: Double {
-        total - transactionsTotal
-    }
-    
-    var overSpent: Bool {
-        remainingBudgetTotal < 0
+    static var all: NSFetchRequest<BudgetCategory> {
+        let request = BudgetCategory.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "dateCreated", ascending: false)]
+        return request
     }
 }

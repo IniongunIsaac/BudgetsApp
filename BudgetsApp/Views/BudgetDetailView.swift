@@ -48,11 +48,15 @@ struct BudgetDetailView: View {
                 .disabled(!isFormValid)
                 .centerHorizontally()
             }
+            .frame(maxHeight: 250)
+            .padding(.bottom, 20)
             
-            BudgetSummaryView(budgetCategory: budgetCategory)
-            
-            TransactionListView(request: BudgetCategory.transactionsByCategoryRequest(budgetCategory),
-                                onDeleteTransaction: deleteTransaction)
+            VStack {
+                BudgetSummaryView(budgetCategory: budgetCategory)
+                
+                TransactionListView(request: BudgetCategory.transactionsByCategoryRequest(budgetCategory),
+                                    onDeleteTransaction: deleteTransaction)
+            }
         }
     }
     
@@ -65,6 +69,9 @@ struct BudgetDetailView: View {
             budgetCategory.addToTransactions(transaction)
             
             try viewContext.save()
+            
+            title = ""
+            total = ""
             
         } catch {
             print(error)

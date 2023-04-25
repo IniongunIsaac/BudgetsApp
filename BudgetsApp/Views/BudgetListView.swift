@@ -11,6 +11,7 @@ struct BudgetListView: View {
     
     let budgetCategoryResults: FetchedResults<BudgetCategory>
     let onDeleteBudgetCategory: (BudgetCategory) -> Void
+    let onEditBudgetCategory: (BudgetCategory) -> Void
     
     var body: some View {
         List {
@@ -22,14 +23,16 @@ struct BudgetListView: View {
                             Spacer()
                             VStack(alignment: .trailing, spacing: 10) {
                                 Text(budgetCategory.total as NSNumber, formatter: NumberFormatter.currency)
-                                VStack {
-                                    Text("\(budgetCategory.overSpent ? "Overspent": "Remaining") \(Text(budgetCategory.remainingBudgetTotal as NSNumber, formatter: NumberFormatter.currency))")
-                                        .frame(maxWidth: .infinity, alignment: .trailing)
-                                        .fontWeight(.medium)
-                                        .font(.caption)
-                                        .foregroundColor(budgetCategory.overSpent ? .red: .green)
-                                }
+                                Text("\(budgetCategory.overSpent ? "Overspent": "Remaining") \(Text(budgetCategory.remainingBudgetTotal as NSNumber, formatter: NumberFormatter.currency))")
+                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                    .fontWeight(.medium)
+                                    .font(.caption)
+                                    .foregroundColor(budgetCategory.overSpent ? .red: .green)
                             }
+                        }
+                        .contentShape(Rectangle())
+                        .onLongPressGesture {
+                            onEditBudgetCategory(budgetCategory)
                         }
                     }
                 }.onDelete { indexSet in

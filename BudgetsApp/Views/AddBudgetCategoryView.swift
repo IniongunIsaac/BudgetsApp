@@ -16,6 +16,12 @@ struct AddBudgetCategoryView: View {
     @State private var total: Double = 100
     @State private var messages: [String] = []
     
+    private let budgetCategory: BudgetCategory?
+    
+    init(budgetCategory: BudgetCategory? = nil) {
+        self.budgetCategory = budgetCategory
+    }
+    
     private var isFormValid: Bool {
         messages.removeAll()
         
@@ -30,10 +36,16 @@ struct AddBudgetCategoryView: View {
         return messages.isEmpty
     }
     
-    private func save() {
-        let budgetCategory = BudgetCategory(context: viewContext)
-        budgetCategory.title = title
-        budgetCategory.total = total
+    private func saveOrUpdate() {
+        if let budgetCategory {
+            let budget = BudgetCategory.byId(budgetCategory.objectID)
+            budget.title = title
+            budget.total = total
+        } else {
+            let budgetCategory = BudgetCategory(context: viewContext)
+            budgetCategory.title = title
+            budgetCategory.total = total
+        }
         
         do {
             try viewContext.save()
@@ -66,6 +78,9 @@ struct AddBudgetCategoryView: View {
                 }
                 
             } //:Form
+            .onAppear {
+                showDetails()
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel", role: .destructive) {
@@ -76,12 +91,18 @@ struct AddBudgetCategoryView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
                         if isFormValid {
-                            save()
+                            saveOrUpdate()
                         }
                     }
                 } //: Save
             }
         } //:NavigationStack
+    }
+    
+    private func showDetails() {
+        guard let budgetCategory else { return }
+        title = budgetCategory.title ?? ""
+        total = budgetCategory.total
     }
 }
 
